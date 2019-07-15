@@ -7,7 +7,7 @@
             <meta name="author" content="">
             
 
-            <title>Undip Smart Parkir</title>
+            <title>Sub 2</title>
 
             <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
