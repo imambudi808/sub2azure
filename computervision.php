@@ -1,3 +1,15 @@
+<?php
+if (isset($_POST['submit'])) {
+	if (isset($_POST['url'])) {
+		$url = $_POST['url'];
+	} else {
+		header("Location: index.php");
+	}
+} else {
+	header("Location: index.php");
+}
+?>
+
 <!DOCTYPE html>
     <html>
     <head>
@@ -5,15 +17,17 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="description" content="">
             <meta name="author" content="">
-            
+           
 
-            <title>Sub 2</title>
+            <title>Submission 2</title>
 
             <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <!-- Bootstrap core CSS -->
+            <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-            
+            <!-- Custom styles for this template -->
+            <link href="starter-template.css" rel="stylesheet">
 
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     </head>
@@ -25,7 +39,8 @@
 		
 		</nav>
 		<main role="main" class="container">
-    		
+        <br><br>
+    		<h1>Hasil analisis gambar<h1>
         <script type="text/javascript">
             $(document).ready(function () {
             // **********************************************
