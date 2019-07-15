@@ -21,10 +21,26 @@ if (isset($_POST['submit'])) {
 
             <title>Submission 2</title>
 
-            <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+            
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-            <!-- Bootstrap core CSS -->
-            <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="navbar-top-fixed.css" rel="stylesheet">
 
             <!-- Custom styles for this template -->
             <link href="starter-template.css" rel="stylesheet">
@@ -32,7 +48,27 @@ if (isset($_POST['submit'])) {
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     </head>
         <body>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Fixed navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Upload Gambar</a>
+            </li>
+            
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+        </nav>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -43,19 +79,9 @@ if (isset($_POST['submit'])) {
     		<h1>Hasil analisis gambar<h1>
         <script type="text/javascript">
             $(document).ready(function () {
-            // **********************************************
-            // *** Update or verify the following values. ***
-            // **********************************************
-            // Replace <Subscription Key> with your valid subscription key.
+            
             var subscriptionKey = "86e86adca3e949debada81e072b77cb7";
-            // You must use the same Azure region in your REST API method as you used to
-            // get your subscription keys. For example, if you got your subscription keys
-            // from the West US region, replace "westcentralus" in the URL
-            // below with "westus".
-            //
-            // Free trial subscription keys are generated in the "westus" region.
-            // If you use a free trial subscription key, you shouldn't need to change
-            // this region.
+            
             var uriBase =
             "https://southeastasia.api.cognitive.microsoft.com/vision/v2.0/analyze";
             // Request parameters.
@@ -97,20 +123,24 @@ if (isset($_POST['submit'])) {
         });
     </script>
 <br>
-<div id="wrapper" style="width:1020px; display:table;">
-	<div id="jsonOutput" style="width:600px; display:table-cell;">
-		<b>Response:</b>
-		<br><br>
-		<textarea id="responseTextArea" class="UIInput"
-		style="width:580px; height:400px;" readonly=""></textarea>
-	</div>
-	<div id="imageDiv" style="width:420px; display:table-cell;">
+
+
+    <div id="imageDiv" style="width:420px; display:table-cell;">
 		<b>Source Image:</b>
 		<br><br>
 		<img id="sourceImage" width="400" />
 		<br>
 		<h3 id="description">Loading . . .</h3>
 	</div>
-</div>
+    <?php echo "<br>" ?>
+	<div id="jsonOutput" style="width:600px; display:table-cell;">
+		<b>Response:</b>
+		<br><br>
+		<textarea id="responseTextArea" class="UIInput"
+		style="width:580px; height:1000px;" readonly=""></textarea>
+	</div>
+    
+	
+
 </body>
 </html>
